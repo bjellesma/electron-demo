@@ -4,13 +4,15 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "build": "rimraf electron-demo-* && electron-packager . --platform=darwin,win32,linux --arch=x64 --icon=app",
+    "build": "electron-packager . --platform=darwin,win32,linux --arch=x64 --overwrite=true",
     "start": "electron ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "electron": "^6.0.10"
+  "devDependencies": {
+    "electron": "^1.4.15",
+    "electron-packager": "^14.0.6",
+    "rimraf": "^3.0.0"
   }
 }

@@ -3,9 +3,8 @@ const {app,Menu,Tray, BrowserWindow} = electron
 const path = require('path')
 
 app.on('ready', _ => {
-    new BrowserWindow()
     //we're using path.join to be platform agnostic
-    const tray = new Tray(path.join('src', 'trayIcon.png'))
+    // const tray = new Tray(path.join('src', 'trayIcon.png'))
     const name = electron.app.getName()
     mainWindow = new BrowserWindow({
         height: 900,
@@ -42,13 +41,13 @@ app.on('ready', _ => {
             
         }
     ]
-    contextMenu = Menu.buildFromTemplate([
-        {
-            label: 'Sample',
-            click: _ => console.log('cool!')
-        }
-    ])
-    tray.setContextMenu(contextMenu)
+    // contextMenu = Menu.buildFromTemplate([
+    //     {
+    //         label: 'Sample',
+    //         click: _ => console.log('cool!')
+    //     }
+    // ])
+    // tray.setContextMenu(contextMenu)
     const menu = Menu.buildFromTemplate(template)
     Menu.setApplicationMenu(menu)
 })
